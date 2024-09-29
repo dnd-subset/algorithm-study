@@ -7,8 +7,8 @@ import java.util.StringTokenizer;
 
 /*
 	- 문제 링크: https://www.acmicpc.net/problem/1303
-	- 메모리: 16280KB
-	- 시간: 132ms
+	- 메모리: 16144KB
+	- 시간: 124ms
  */
 /*
 	- 색깔 그래프 순회
@@ -19,19 +19,19 @@ import java.util.StringTokenizer;
  */
 public class Main {
 	static char[][] graph;
-	static int[][] visited;
+	static boolean[][] visited;
 	static int cnt = 0, totalW = 0, totalB = 0;
 	static int n, m;
 	static int[] dx = {0, 0, -1, 1};
 	static int[] dy = {1, -1, 0, 0};
 
 	public static void DFS(int x, int y, char t) {
-		visited[x][y] = 1; // 현재 위치 방문
+		visited[x][y] = true; // 현재 위치 방문
 		cnt++;
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
-			if (nx >= 0 && nx < m && ny >= 0 && ny < n && graph[nx][ny] == t && visited[nx][ny] == 0) {
+			if (nx >= 0 && nx < m && ny >= 0 && ny < n && graph[nx][ny] == t && !visited[nx][ny]) {
 				DFS(nx, ny, t); // 연속된 영역 탐색
 			}
 		}
@@ -44,7 +44,7 @@ public class Main {
 		n = Integer.parseInt(st.nextToken()); //열
 		m = Integer.parseInt(st.nextToken()); //행
 		graph = new char[m][n];
-		visited = new int[m][n];
+		visited = new boolean[m][n];
 
 		for (int i = 0; i < m; i++) {
 			String s = br.readLine();
@@ -55,7 +55,7 @@ public class Main {
 
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
-				if (visited[i][j] == 0) {
+				if (!visited[i][j]) {
 					if (graph[i][j] == 'W') {
 						cnt = 0; // 개수 초기화
 						DFS(i, j, 'W');

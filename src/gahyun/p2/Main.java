@@ -1,11 +1,14 @@
 package gahyun.p2;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 /*
 	- 문제 링크: https://www.acmicpc.net/problem/1303
-	- 메모리: 20420KB
-	- 시간: 220ms
+	- 메모리: 16280KB
+	- 시간: 132ms
  */
 /*
 	- 색깔 그래프 순회
@@ -34,16 +37,17 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		n = sc.nextInt(); //열
-		m = sc.nextInt(); //행
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(st.nextToken()); //열
+		m = Integer.parseInt(st.nextToken()); //행
 		graph = new char[m][n];
 		visited = new int[m][n];
 
 		for (int i = 0; i < m; i++) {
-			String s = sc.next();
+			String s = br.readLine();
 			for (int j = 0; j < n; j++) {
 				graph[i][j] = s.charAt(j);
 			}

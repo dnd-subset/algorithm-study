@@ -1,13 +1,16 @@
 package gahyun.p3;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /*
 	- 문제 링크: https://www.acmicpc.net/problem/7569
-	- 메모리: 330176KB
-	- 시간: 1524ms
+	- 메모리: 124556KB
+	- 시간: 576ms
  */
 /*
 	- BFS 탐색 로직은 1번과 동일, 차원만 증가
@@ -18,7 +21,7 @@ import java.util.Scanner;
  */
 public class Main {
 	static int[][][] graph, dis;
-	static Queue<Pos> queue = new LinkedList<>(); //main에서도 쓰인
+	static Queue<Pos> queue = new LinkedList<>(); //main에서도 쓰임
 	// 이동 가능한 좌표
 	static int[] dx = {0, 0, -1, 1, 0, 0};
 	static int[] dy = {-1, 1, 0, 0, 0, 0};
@@ -42,19 +45,21 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		m = sc.nextInt(); // 열
-		n = sc.nextInt(); // 행
-		h = sc.nextInt(); // 높이
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		m = Integer.parseInt(st.nextToken()); // 열
+		n = Integer.parseInt(st.nextToken()); // 행
+		h = Integer.parseInt(st.nextToken()); // 높이
 
 		graph = new int[h][n][m];
 		dis = new int[h][n][m];
 
 		for (int k = 0; k < h; k++) {
 			for (int i = 0; i < n; i++) {
+				st = new StringTokenizer(br.readLine());
 				for (int j = 0; j < m; j++) {
-					graph[k][i][j] = sc.nextInt();
+					graph[k][i][j] = Integer.parseInt(st.nextToken());
 					if (graph[k][i][j] == 1) {
 						queue.offer(new Pos(i, j, k));
 					}
@@ -74,7 +79,7 @@ public class Main {
 				}
 			}
 		}
-		int ans = Integer.MIN_VALUE;
+		int ans = 0;
 		if (flag) {
 			for (int k = 0; k < h; k++) {
 				for (int i = 0; i < n; i++) {

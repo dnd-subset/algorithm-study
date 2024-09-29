@@ -1,13 +1,16 @@
 package gahyun.p1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /*
 	- 문제 링크: https://www.acmicpc.net/problem/2178
-	- 메모리: 19064KB
- 	- 시간: 204ms
+	- 메모리: 14988KB
+ 	- 시간: 112ms
  */
 /*
 	- BFS 탐색
@@ -43,23 +46,24 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		m = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
 
 		graph = new int[n][m]; //이동가능여부
 		dis = new int[n][m]; //거리
 
 		for (int i = 0; i < n; i++) {
-			String s = sc.next();
+			String s = br.readLine();
 			for (int j = 0; j < m; j++) {
 				graph[i][j] = s.charAt(j) - '0';
 			}
 		}
 
 		BFS();
-		System.out.println(dis[n-1][m-1]);
+		System.out.println(dis[n - 1][m - 1]);
 	}
 }
 

@@ -1,4 +1,4 @@
-package gahyun.p1;
+package week01.gahyun.p1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

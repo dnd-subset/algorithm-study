@@ -1,6 +1,4 @@
-package week10.p1;
-
-import java.util.*;
+package week10.sunghee.p1;
 
 class Solution {
     int max = -1;

@@ -1,4 +1,4 @@
-package week10.p2;
+package week10.sunghee.p2;
 
 
 import java.util.*;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 /**
- * 단조스택 감소 (Monotonic Stack Decreasing)
+ * 단조감조스택 (Monotonic Decreasing Stack)
  * - 값 저장, 인덱스 저장 두 가지 방법 존재
  *   - 인덱스 저장이 더 활용도 높음 (ex: 기간 구하기)
  * - 스택에는 뒷 큰수 아직 못 만난 인덱스 남음
@@ -14,6 +14,7 @@ import java.util.Stack;
  */
 
 /**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/154539
  * 시행착오
  * - 완전 탐색으로 풀 경우 시간 복잡도 O(N^2) -> 시간 초과
  * - 단조 스택은 시간 복잡도 O(N)으로 풀 수 있음

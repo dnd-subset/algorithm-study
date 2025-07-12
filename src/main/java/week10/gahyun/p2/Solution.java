@@ -1,4 +1,4 @@
-package week10.p2;
+package week10.gahyun.p2;
 
 /**
  * 접근 방식:

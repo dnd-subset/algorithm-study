@@ -1,4 +1,4 @@
-package week10.p5;
+package week10.gahyun.p5;
 
 import java.util.*;
 

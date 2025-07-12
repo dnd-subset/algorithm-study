@@ -1,4 +1,4 @@
-package week10.p6;
+package week10.gahyun.p6;
 
 import java.util.Arrays;
 import java.util.Stack;

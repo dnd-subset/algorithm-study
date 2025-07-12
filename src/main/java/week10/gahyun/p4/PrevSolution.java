@@ -1,4 +1,4 @@
-package week10.p4;
+package week10.gahyun.p4;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package week10.p1;
+package week10.gahyun.p1;
 
 /**
  * 완전 탐색인데 조건 존재 -> 백트래킹

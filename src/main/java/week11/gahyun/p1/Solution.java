@@ -2,6 +2,19 @@ package week11.gahyun.p1;
 
 import java.util.*;
 
+/**
+ * 2x2이므로 dfs아닌 완전 탐색
+ * 헷갈린점:
+ * (1) 블록 내리기
+ * 	    - block[r] 아래부터 위로 탐색
+ * 	    	- writeRow는 어디까지 썼는지 나타내는 포인터 (r과 동일하게 아래부터)
+ * 			- if) block[r] 빈칸 아니면
+ * 				- block[writeRow] = block[r]
+ * 				- writeRow--;
+* 		- writeRow ~ 0까지 빈칸으로 채우기
+ *  (2) mark 배열 둬야 함 하나의 배열로 처리 불가
+ */
+
 class Solution {
 	static char[][] block;
 	static boolean[][] marked;

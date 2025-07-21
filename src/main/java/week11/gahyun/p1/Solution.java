@@ -1,4 +1,4 @@
-package week11.p1;
+package week11.gahyun.p1;
 
 /**
  * 2x2이므로 dfs아닌 완전 탐색

@@ -1,4 +1,4 @@
-package week11.p2;
+package week11.gahyun.p2;
 
 import java.util.LinkedList;
 import java.util.Queue;
